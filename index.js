@@ -11,7 +11,8 @@ module.exports = function (types) {
     }
 
     return function(req, res, next) {
-        if (req.is(types)) {
+        // If we have no types, there's nothing to check, so just continue on.
+        if (!types || req.is(types)) {
             return next();
         }
         res.status(415).send(new RestError(415, 'UnsupportedMediaType', 'Unsupported Media Type ' + req.headers['content-type']));
