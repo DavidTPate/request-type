@@ -1,0 +1,30 @@
+{
+    "name": "request-type",
+    "description": "Node.js Content-Type checking middleware.",
+    "version": "0.0.0",
+    "author": "David Pate <me@davidtpate.com> (http://davidtpate.com)",
+    "keywords": [
+        "Content-Type",
+        "Express",
+        "middleware",
+        "node"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DavidTPate/request-type"
+    },
+    "bugs": {
+        "url": "https://github.com/DavidTPate/request-type/issues"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "istanbul": "^0.x",
+        "mocha": "^1.x",
+        "should": "^4.x",
+        "type-is": "^1.x"
+    },
+    "scripts": {
+        "test": "mocha --check-leaks --bail --reporter spec test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --check-leaks --reporter dot test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --check-leaks --reporter spec test/"
+    }}
