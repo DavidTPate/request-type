@@ -82,4 +82,19 @@ describe('requestType(\'application/json\')', function () {
             done();
         });
     });
+    it('shouldn\'t match fully wildcarded Content-Type', function (done) {
+        var req = new MockRequest();
+        req.headers = {};
+        req.headers['content-type'] = 'application/xml';
+        req.headers['content-length'] = 16;
+
+        var res = new MockResponse(function () {
+            if (this.status === 415) {
+                done();
+            }
+        });
+
+        requestType('*')(req, res, undefined);
+    });
+
 });
