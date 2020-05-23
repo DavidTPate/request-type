@@ -19,7 +19,7 @@
     "license": "MIT",
     "devDependencies": {
         "istanbul": "^0.x",
-        "mocha": "^3.3.0",
+        "mocha": "^7.2.0",
         "should": "^13.1.0",
         "type-is": "^1.x"
     },
